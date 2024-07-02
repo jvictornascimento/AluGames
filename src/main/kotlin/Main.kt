@@ -14,4 +14,9 @@ fun main() {
         .send(request, BodyHandlers.ofString())
     val json = response.body()
     println(json)
+
+    val meuJogo = Jogo()
+    meuJogo.titulo = "Batman: Arkham Asylum Game of the Year Edition"
+    meuJogo.capa = "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/35140/capsule_sm_120.jpg?t=1702934705"
+    println(meuJogo)
 }
