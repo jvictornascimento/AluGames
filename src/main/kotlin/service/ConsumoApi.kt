@@ -1,29 +1,29 @@
-package br.com.alura.service
+package br.com.alura.alugames.service
 
+import br.com.alura.br.com.alura.alugames.model.InfoJogo
+import com.google.gson.Gson
 import java.io.IOException
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse
+import java.util.*
 
 
 class ConsumoApi {
-    fun  obterDados(endereco: String?): String? {
+    fun   buscaJogo(id: String?): InfoJogo {
+
+        val endereco = "https://www.cheapshark.com/api/1.0/games?id=$id"
         val client: HttpClient = HttpClient.newHttpClient()
         val request = HttpRequest.newBuilder()
             .uri(URI.create(endereco))
             .build()
-        var response: HttpResponse<String?>? = null
-        try {
-            response = client
-                .send(request, HttpResponse.BodyHandlers.ofString())
-        } catch (e: IOException) {
-            throw RuntimeException(e)
-        } catch (e: InterruptedException) {
-            throw RuntimeException(e)
-        }
-
+        var response = client
+            .send(request, HttpResponse.BodyHandlers.ofString())
         val json = response.body()
-        return json
+        val gson = Gson()
+
+        val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
+        return meuInfoJogo
     }
 }
