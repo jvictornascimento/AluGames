@@ -25,7 +25,7 @@ fun main() {
 
         val resultado = runCatching {
 
-            meuJogo = Jogo(informacaoJogo.info.title, informacaoJogo.info.thumb)
+            meuJogo = informacaoJogo.get(0)
         }
         resultado.onFailure {
             println("Jogo inixistente tente outro id.")

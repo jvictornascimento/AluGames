@@ -1,7 +1,7 @@
 package br.com.alura.br.com.alura.alugames.model
 
 data class Jogo(val titulo:String, val capa:String) {
-
+    val preco:String? =null
      var descricao:String? = null
 
 
