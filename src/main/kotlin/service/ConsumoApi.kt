@@ -27,7 +27,7 @@ class ConsumoApi {
             .send(request, HttpResponse.BodyHandlers.ofString())
        return response.body()
     }
-    fun   buscaJogo(id: String?): List<Jogo> {
+    fun   buscaJogo(): List<Jogo> {
         //val endereco = "https://www.cheapshark.com/api/1.0/games?id=$id"
         val endereco = "https://raw.githubusercontent.com/jeniblodev/arquivosJson/main/jogos.json"
         var json = consomeDados(endereco)

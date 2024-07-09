@@ -49,6 +49,10 @@ data class Gamer(var nome:String, var email:String){
             throw IllegalArgumentException("Email inválido")
         }
     }
+
+    fun alugaJogo(jogo: Jogo):Aluguel{
+        return Aluguel(this,jogo)
+    }
     companion object{
         fun criarGamer(leitura:Scanner):Gamer{
             println("Ola seja bem vindo qual o seu nome?")

@@ -19,7 +19,7 @@ fun main() {
 
         println("Digite o codigo do jogo para buscar:")
         val busca = leitura.nextLine()
-        var informacaoJogo = buscaApi.buscaJogo(busca)
+        var informacaoJogo = buscaApi.buscaJogo()
 
         var meuJogo: Jogo? =null
 
