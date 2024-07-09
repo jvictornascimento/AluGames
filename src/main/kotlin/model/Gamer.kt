@@ -18,6 +18,7 @@ data class Gamer(var nome:String, var email:String){
         private set
 
     val jogosBuscados = mutableListOf<Jogo?>()
+    val jogosAlugados = mutableListOf<Aluguel>()
 
 
 
@@ -52,7 +53,10 @@ data class Gamer(var nome:String, var email:String){
     }
 
     fun alugaJogo(jogo: Jogo, periodo: Periodo):Aluguel{
-        return Aluguel(this,jogo,periodo)
+         var aluguel = Aluguel(this,jogo,periodo)
+        jogosAlugados.add(aluguel)
+
+        return aluguel
     }
     companion object{
         fun criarGamer(leitura:Scanner):Gamer{
