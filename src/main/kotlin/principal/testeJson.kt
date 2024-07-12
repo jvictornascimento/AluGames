@@ -38,7 +38,12 @@ fun main (){
     gamerCamila.alugaJogo(jogoSpider,periodo2)
     gamerCamila.alugaJogo(jogoTheLastOfUs, periodo3)
     gamerCamila.alugaJogo(jogoGta,periodo3)
-    print(gamerCamila.jogosAlugados)
+
+    gamerCamila.recomendar(7)
+    gamerCamila.recomendar(10)
+    gamerCamila.recomendar(8)
+
+    print(gamerCamila)
 
 
 
